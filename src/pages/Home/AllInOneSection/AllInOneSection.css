@@ -1,0 +1,13 @@
+.chat_bubble_pink {
+  padding: 8px 16px 8px 16px;
+  border-radius: 15px 15px 3px 15px;
+  background-color: #EFD9F9;
+  font-weight: 500;
+}
+
+.chat_bubble_sky {
+    padding: 8px 16px 8px 16px;
+    border-radius: 15px 15px 15px 3px;
+    background-color: #DDF3FF;
+    font-weight: 500;
+  }
