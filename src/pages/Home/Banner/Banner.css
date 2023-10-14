@@ -1,0 +1,12 @@
+.banner-gradient {
+    background: linear-gradient(74.71deg, #FEDDEE 0%, #FCF6FC 31.77%, #C5EAED 64.58%, #FDDDFE 100%);
+  }
+  
+
+.gradient-text {
+    background: linear-gradient(90.97deg, #0076CE 26.63%, #9400D3 65.81%);
+    -webkit-background-clip: text; /* For WebKit (Safari, Chrome) */
+    background-clip: text;
+    color: transparent; /* Set the text color to transparent */
+  }
+  
