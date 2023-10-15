@@ -30,7 +30,7 @@ const Banner = () => {
     setSearchInput(""); // Clear the search input
   };
 
- console.log(searchResults);
+//  console.log(searchResults);
   return (
     <div className="banner-gradient">
       <div className="md:flex items-center justify-center gap-16 my-container">
