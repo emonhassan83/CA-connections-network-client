@@ -41,38 +41,84 @@ const AccountantDetailsPage = () => {
   } = accountantDetailData;
 
   return (
-    <div className="my-container">
-      <div className="lg:flex items-center justify-center gap-[30px]">
-        <div className="w-full lg:w-[40%]">
-          <h4>{name}</h4>
-          <p>{intro}</p>
-          <div className="flex items-center gap-1">
-            <AiTwotoneStar />
+    <div className="my-container mt-20 bg-[#FAFBFC]">
+      <div className="lg:flex flex-row-reverse items-center justify-center gap-[30px]">
+
+        <div className="w-full lg:w-[55%]">
+          <img className="w-full p-4 rounded-3xl mb-[22px]" src={image} alt="Accountant Image" />
+          <h2 className="text-4xl font-bold mb-8">About {name}</h2>
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="font-semibold text-gray-500">FROM</p>
+              <p className="text-xl uppercase mt-2">{about.from}</p>
+            </div>
+            <div>
+              <p className="font-semibold text-gray-500">PARTNER SINCE</p>
+              <p className="text-xl uppercase mt-2">{about.partnerSince}</p>
+            </div>
+            <div>
+              <p className="font-semibold text-gray-500">AVERAGE RESPONSE TIME</p>
+              <p className="text-xl uppercase mt-2">{about.averageResponseTime}</p>
+            </div>
+          </div>
+
+          <div className="mt-8">
+            <p className="font-semibold text-gray-500">ABOUT</p>
+            <p className="text-xl mt-2">{about.description}</p>
+          </div>
+
+          <div className="flex items-center justify-between mt-8">
+            <div>
+              <p className="font-semibold text-gray-500">SERVICES I OFFER</p>
+              {about?.services.map((item, index) => (
+                <div key={index} className="flex items-center text-lg mt-2">
+                  <BsDot />
+                  <p>{item}</p>
+                </div>
+              ))}
+            </div>
+            <div>
+              <p className="font-semibold text-gray-500">WHY ME?</p>
+              {about?.benefits.map((item, index) => (
+                <div key={index} className="flex items-center text-lg mt-2">
+                  <BsDot />
+                  <p>{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="w-full lg:w-[45%]">
+          <h2 className="text-4xl font-bold">{name}</h2>
+          <p className="mt-4 text-xl font-medium">{intro}</p>
+          <div className="flex items-center gap-1 mt-8">
+            <AiTwotoneStar className="primary_color"/>
             <p>
-              <span>{rating}</span> ({reviewCount})
+              <span className="primary_color font-bold">{rating}</span> ({reviewCount})
             </p>
           </div>
           {/* 1ST CARD */}
-          <div>
-            <div className="flex items-center gap-3">
-              <p>{taskComplexity}</p>
-              <p>{price}</p>
+          <div className="bg-white rounded-lg shadow-lg mt-8 p-6">
+            <div className="flex items-center justify-between">
+              <p className="text-xl">{taskComplexity}</p>
+              <p className="text-2xl font-bold">{price}</p>
             </div>
-            <div className="flex items-center gap-3">
-              <LuCalendarDays />
-              <p>{deliveryTime}</p>
+            <div className="flex items-center gap-3 mt-6">
+              <LuCalendarDays className="primary_color text-xl"/>
+              <p className="text-xl">{deliveryTime}</p>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center justify-between mt-[23px]">
               <button className="btn btn-sm btn-color">Request Proposal</button>
-              <button className="btn btn-sm btn-color btn-outline">
+              <button className="btn btn-sm btn-outline text-[#0076CE] hover:bg-[#0465ae]">
                 Chat with me
               </button>
             </div>
           </div>
           {/* 2ND CARD */}
-          <div>
-            <h4>What people say?</h4>
-            <p>
+          <div className="bg-white rounded-lg shadow-lg mt-8 p-6">
+            <h4 className="text-4xl font-bold">What people say?</h4>
+            <p className="text-lg font-medium mt-4">
               I cannot express enough gratitude for the support Micheal has
               provided in managing my personal finances. Their attention to
               detail and deep understanding of financial markets has ensured
@@ -81,55 +127,10 @@ const AccountantDetailsPage = () => {
             </p>
           </div>
         </div>
-
-        <div className="w-full lg:w-[60%]">
-          <img src={image} alt="" />
-          <h2>About {name}</h2>
-          <div className="flex items-center justify-between">
-            <div>
-              <p>FROM</p>
-              <p>{about.from}</p>
-            </div>
-            <div>
-              <p>PARTNER SINCE</p>
-              <p>{about.partnerSince}</p>
-            </div>
-            <div>
-              <p>AVERAGE RESPONSE TIME</p>
-              <p>{about.averageResponseTime}</p>
-            </div>
-          </div>
-
-          <div>
-            <p>ABOUT</p>
-            <p>{about.description}</p>
-          </div>
-
-          <div className="flex items-center justify-between">
-            <div>
-              <p>SERVICES I OFFER</p>
-              {about?.services.map((item, index) => (
-                <div key={index} className="flex items-center">
-                  <BsDot />
-                  <p>{item}</p>
-                </div>
-              ))}
-            </div>
-            <div>
-              <p>WHY ME?</p>
-              {about?.benefits.map((item, index) => (
-                <div key={index} className="flex items-center">
-                  <BsDot />
-                  <p>{item}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
       </div>
 
-      <div className="mt-[132px]">
-        <h4>Recommended for you</h4>
+      <div className="my-[132px]">
+        <h4 className="text-3xl font-bold mb-8">Recommended for you</h4>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {filterData?.slice(0,3).map((item) => (
             <AccountantCard key={item._id} item={item} />

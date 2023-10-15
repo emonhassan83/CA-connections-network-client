@@ -5,18 +5,18 @@ const AccountantCard = ({ item }) => {
     <div className="rounded-xl shadow-lg">
       <img className="h-[244px]" src={item.image} alt="Accountant Image" />
       <div className="p-4">
-        <div className="flex items-center justify-between">
-          <h6>{item?.name}</h6>
-          <h6>{item?.price}</h6>
+        <div className="flex items-center justify-between p-[17px]">
+          <h6 className="text-xl font-bold">{item?.name}</h6>
+          <h6 className="text-xl font-bold">{item?.price}</h6>
         </div>
-        <p>{item?.intro}</p>
+        <p className="font-medium">{item?.intro}</p>
         <div className="flex items-center gap-1">
-          <AiTwotoneStar />
+          <AiTwotoneStar className="primary_color"/>
           <p>
-            <span>{item?.rating}</span> ({item?.reviewCount})
+            <span className="primary_color font-bold">{item?.rating}</span> ({item?.reviewCount})
           </p>
         </div>
-        <button className="btn btn-sm btn-color mt-8 btn-block">View services</button>
+        <button className="btn btn-color mt-8 btn-block">View services</button>
       </div>
     </div>
   );

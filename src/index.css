@@ -5,11 +5,11 @@
 
 /* custom css class */
 .active{
-    @apply font-medium tracking-wide text-[#A81C51] transition-colors duration-200
+    @apply font-bold tracking-wide text-black transition-colors duration-200
   }
   
   .default{
-    @apply font-medium tracking-wide text-black transition-colors duration-200 hover:text-[#A81C51]
+    @apply font-bold tracking-wide text-black transition-colors duration-200 hover:bg-black
   }
 .my-container {
   @apply max-w-[2520px] xl:px-28 md:px-10 sm:px-2 px-4
@@ -25,10 +25,14 @@ html, body {
   box-sizing: border-box;
 }
 
+.btn-color {
+  @apply bg-[#0076CE] text-white hover:bg-[#0465ae] border-none;
+}
+
 .primary_color {
  @apply text-[#0076CE];
 }
 
 .bg_primary {
- @apply text-[#0076CE];
+ @apply bg-[#0076CE] text-white;
 }

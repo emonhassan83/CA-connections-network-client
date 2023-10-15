@@ -7,7 +7,7 @@ const JoinUs = () => {
       <h2 className="text-[65px] font-bold leading-[80px]">
         Want to <span className="gradient-text">Join</span> Us?
       </h2>
-      <p className="text-lg">
+      <p className="text-2xl font-semibold mt-4">
         To remain with us, it is essential that you diligently follow the steps
         provided
       </p>
@@ -19,7 +19,7 @@ const JoinUs = () => {
             <JoinUsCard key={data.serial} data={data} />
           ))}
       </div>
-      <p className="mt-8">* For forms AOC-4 and MGT-7, you will be charged a penalty of ₹200 every day until you file the form . There is no maximum penalty amount. So, if you don't file the form for a year, you will owe ₹73,000 per form</p>
+      <p className="mt-8 text-[17px] font-medium">* For forms AOC-4 and MGT-7, you will be charged a penalty of ₹200 <span className="font-bold">every day</span> until you file the form . There is no maximum penalty amount. So, if you don't file the form for a year, you will owe ₹73,000 per form</p>
     </div>
   );
 };

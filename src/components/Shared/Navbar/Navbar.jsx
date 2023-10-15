@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { RiArrowDownSLine } from "react-icons/ri";
+import { IoLogoDropbox } from 'react-icons/io';
+
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="sticky top-0 z-10 bg-transparent backdrop-blur-md max-w-[2520px] xl:px-28 md:px-10 sm:px-2 w-full px-4  mx-auto h-[85px] banner-gradient">
+    <div className="sticky top-0 z-10 bg-transparent backdrop-blur-xl max-w-[2520px] xl:px-28 md:px-10 sm:px-2 w-full px-4  mx-auto h-[85px] ">
       <div className="relative flex items-center justify-between">
         <Link
           to="/"
@@ -13,11 +16,12 @@ const Navbar = () => {
           title=""
           className="inline-flex items-center"
         >
-          <div className="flex items-center justify-center w-40 h-20">
+          <div className="flex items-center justify-center gap-1 w-40 h-20">
+          <IoLogoDropbox className="text-3xl mt-2"/>
             <h2 className="text-xl font-bold">logoipsum</h2>
           </div>
         </Link>
-        <ul className="items-center hidden space-x-8 lg:flex text-black">
+        <ul className="items-center hidden space-x-8 lg:flex text-black font-medium">
           <li>
             <NavLink
               to="/"
@@ -25,7 +29,10 @@ const Navbar = () => {
               title="Home"
               className={({ isActive }) => (isActive ? "active" : "default")}
             >
-              Solutions
+              <p className="flex items-center">
+                Solutions
+                <RiArrowDownSLine className="primary_color mt-1 text-lg" />
+              </p>
             </NavLink>
           </li>
           <li>
@@ -35,7 +42,10 @@ const Navbar = () => {
               title=""
               className={({ isActive }) => (isActive ? "active" : "default")}
             >
-              Features
+              <p className="flex items-center">
+                Features
+                <RiArrowDownSLine className="primary_color mt-1 text-lg" />
+              </p>
             </NavLink>
           </li>
           <li>
@@ -45,16 +55,19 @@ const Navbar = () => {
               title=""
               className={({ isActive }) => (isActive ? "active" : "default")}
             >
-              About
+              <p className="flex items-center">
+                About
+                <RiArrowDownSLine className="primary_color mt-1 text-lg" />
+              </p>
             </NavLink>
           </li>
         </ul>
 
         <div className="flex items-center justify-center gap-2">
-          <button className="btn btn-outline hidden lg:block btn-sm px-5 rounded-3xl text-black hover:bg-[#A81C51] hover:border-none my-4 uppercase">
+          <button className="btn btn-outline text-[#0076CE] hover:bg-[#0465ae] hidden lg:block px-5  hover:border-none my-4 uppercase">
             Login
           </button>
-          <button className="btn hidden lg:block btn-sm px-5 rounded-3xl text-black hover:bg-[#A81C51] hover:border-none my-4 uppercase">
+          <button className="btn hidden lg:block  px-5 btn-color hover:border-none my-4 uppercase">
             Register
           </button>
         </div>
@@ -92,7 +105,8 @@ const Navbar = () => {
                       title=""
                       className="inline-flex items-center"
                     >
-                      <div className="flex items-center justify-center w-20 h-16">
+                      <div className="flex items-center justify-center -ml-2 h-14">
+                      <IoLogoDropbox className="text-3xl mt-2"/>
                         <h4 className=" font-bold">logoipsum</h4>
                       </div>
                     </Link>
@@ -122,7 +136,10 @@ const Navbar = () => {
                         title=""
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
-                        Solutions
+                        <p className="flex items-center">
+                          Solutions
+                          <RiArrowDownSLine className="primary_color mt-1 text-lg" />
+                        </p>
                       </Link>
                     </li>
                     <li>
@@ -132,7 +149,10 @@ const Navbar = () => {
                         title=""
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
-                        Features
+                        <p className="flex items-center">
+                          Features
+                          <RiArrowDownSLine className="primary_color mt-1 text-lg" />
+                        </p>
                       </Link>
                     </li>
 
@@ -143,15 +163,27 @@ const Navbar = () => {
                         title=""
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
-                        About
+                        <p className="flex items-center">
+                          About
+                          <RiArrowDownSLine className="primary_color mt-1 text-lg" />
+                        </p>
                       </Link>
                     </li>
 
-                    <Link to="/login">
-                      <button className="btn btn-outline btn-sm px-5 rounded-3xl text-black hover:bg-[#A81C51] hover:border-none my-4 -ml-2 uppercase">
-                        Login
-                      </button>
-                    </Link>
+                    <li>
+                      <Link to="/">
+                        <button className="btn btn-outline text-[#0076CE] hover:bg-[#0465ae] btn-sm hover:border-none -ml-2 uppercase">
+                          Login
+                        </button>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/">
+                        <button className="btn btn-outline btn-sm btn-color hover:border-none -ml-2 uppercase">
+                          Register
+                        </button>
+                      </Link>
+                    </li>
                   </ul>
                 </nav>
               </div>

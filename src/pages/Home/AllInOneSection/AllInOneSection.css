@@ -11,3 +11,14 @@
     background-color: #DDF3FF;
     font-weight: 500;
   }
+
+  .bg_img_one {
+    background: url('../../../assets/section_img/shape1.png');
+    background-size: cover;
+  }
+  .bg_img_two {
+    background: url('../../../assets/section_img/shape2.png');
+    background-size: cover;
+    height: auto;
+    background-repeat: no-repeat;
+  }

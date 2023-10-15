@@ -4,7 +4,7 @@ import JoinUs from "../JoinUs/JoinUs";
 
 const Home = () => {
     return (
-        <div>
+        <div className="bg-[#FAFBFC]">
             <Banner/>
             <JoinUs/>
             <AlInOneSection/>
