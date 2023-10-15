@@ -2,8 +2,35 @@ import "./Banner.css";
 import img1 from "../../../assets/banner/banner-img1.jpg";
 import img2 from "../../../assets/banner/banner-img2.jpg";
 import img3 from "../../../assets/banner/banner-img3.jpg";
+import { useState } from "react";
+import axios from "axios";
+import { fetchAccountants } from "../../../api/api";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
+  const [searchInput, setSearchInput] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+  const [selectedAccountant, setSelectedAccountant] = useState(null);
+
+  const handleSearchInputChange = async (e) => {
+    const inputValue = e.target.value;
+    setSearchInput(inputValue);
+    const accountants = await fetchAccountants();
+    const matchingAccountants = accountants.filter((accountant) =>
+      accountant.name.toLowerCase().includes(inputValue.toLowerCase())
+    );
+
+    // setSearchResults(matchingAccountants);
+    setSearchResults(matchingAccountants);
+
+  };
+
+  const handleSearchClick = (accountant) => {
+    setSelectedAccountant(accountant);
+    setSearchInput(""); // Clear the search input
+  };
+
+ console.log(searchResults);
   return (
     <div className="banner-gradient">
       <div className="md:flex items-center justify-center gap-16 my-container">
@@ -22,10 +49,28 @@ const Banner = () => {
               className="text-lg h-[60px]"
               type="text"
               placeholder="Search by name"
+              value={searchInput}
+              onChange={handleSearchInputChange}
             />
-            <button className="btn bg-primary text-white -mt-2 -ml-20 h-[60px] w-[120px]">Search</button>
+            <button
+              onClick={handleSearchClick}
+              className="btn bg-primary text-white -mt-2 -ml-20 h-[60px] w-[120px]"
+            >
+              Search
+            </button>
           </div>
+
+            <div className="-mt-4 bg-gray-50 p-2 rounded-lg">
+            {searchResults  && searchResults.map(item => (
+              <Link to={`/accountant/${item.name}`} key={item._id}>
+              <div className="selected-accountant">
+                <h3 className="font-medium">{item.name}</h3>
+              </div>
+              </Link>
+            ))}
+            </div>
         </div>
+
         <div className="w-full md:w-[50%] grid grid-cols-3 items-center gap-4">
           <img src={img1} alt="Banner Image" />
           <img src={img2} alt="Banner Image" />
