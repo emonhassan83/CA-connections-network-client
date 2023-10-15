@@ -1,6 +1,6 @@
 const JoinUsCard = ({ data }) => {
   return (
-    <div className="px-8 py-6 rounded-xl h-[266px] shadow-xl">
+    <div className="px-8 py-6 rounded-xl lg:h-[266px] shadow-xl">
       <h6 className="text-xl font-bold">{data?.title}</h6>
       <p className="font-medium text-base mt-[5px]">{data?.subtitle}</p>
 

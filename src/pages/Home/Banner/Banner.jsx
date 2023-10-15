@@ -27,21 +27,21 @@ const Banner = () => {
 
 //  console.log(searchResults);
   return (
-    <div className="banner-gradient md:h-[80vh]">
+    <div className="banner-gradient xl:h-[80vh] pb-10 lg:pb-0">
       <div className="md:flex items-center justify-center gap-20 my-container pt-12">
         <div className="w-full md:w-[50%]">
-          <h2 className="text-[65px] font-bold leading-[80px]">
+          <h2 className="text-3xl sm:text-5xl md:text-[65px] font-bold sm:leading-[80px] text-center md:text-start leading-10">
             Find <span className="gradient-text">Partners</span> (CAs) available
             online
           </h2>
-          <p className="text-[#616161] text-xl mt-4">
+          <p className="sm:text-lg text-[#616161] md:text-xl mt-4">
             <span className="font-semibold">CONNECT</span> with us where your services are listed and
             visible to a myriad of businesses seeking CA’s for compliance
             support
           </p>
-          <div className="flex items-center mt-12">
+          <div className="flex items-center mt-8 sm:mt-12">
             <input
-              className="text-lg sm:h-[60px] bg-white"
+              className="text-base md:text-lg sm:h-[50px] md:h-[60px] bg-white"
               type="text"
               placeholder="Search by name"
               value={searchInput}
@@ -49,7 +49,7 @@ const Banner = () => {
             />
             <button
               onClick={handleSearchClick}
-              className="btn btn-color text-white -mt-2 -ml-20 sm:h-[60px] w-[120px]"
+              className="btn btn-color text-white -mt-2 -ml-20 sm:h-[50px] md:h-[60px] w-[120px]"
             >
               Search
             </button>
